@@ -45,29 +45,43 @@ const HomePage = () => {
         <w3m-button />
       </Flex>
       <Box
+        position="relative"
         flex={1}
         p={0}
         m={0}
         display="flex"
         flexDirection="column"
         bg="rgba(0, 0, 0, 1)"
-        bgImage="url('/images/1bkg.png')"
-        bgPosition="center"
-        bgRepeat="no-repeat"
-        bgSize="cover"
         color="white"
       >
-        <Box
-          flex={1}
-          p={0}
-          m={0}
-          display="flex"
-          flexDirection="column"
-          bg="rgba(0, 0, 0, 0)"
-          bgPosition="center"
-          bgRepeat="no-repeat"
-          bgSize="cover"
-          color="white"
+        <video
+          autoPlay
+          loop
+          muted
+          style={{
+            position: 'absolute',
+            width: '100%',
+            height: '100%',
+            top: 0,
+            left: 0,
+            objectFit: 'cover',
+            zIndex: -1
+          }}
+        >
+          <source src="images/bkg2.mp4" type="video/mp4" />
+        </video>
+          <Box
+            flex={1}
+            p={0}
+            m={0}
+            display="flex"
+            flexDirection="column"
+            bgImage="url('/images/1bkgclear.png')"
+            bgPosition="center"
+            bgRepeat="no-repeat"
+            bgSize="cover"
+            color="white"
+
         >
           <Flex justifyContent="right" p={2} flexWrap="wrap" position="relative">
             <Image src="images/headinglogo.png" alt="header" width="50%" minW="380px" mt="98px" />
@@ -78,12 +92,8 @@ const HomePage = () => {
             m={0}
             display="flex"
             flexDirection="column"
-            bg="rgba(0, 0, 0, 0)"
-            bgPosition="center"
-            bgRepeat="no-repeat"
-            bgSize="cover"
             color="white"
-            mb="500px"
+            mb="600px"
           >
             <Flex justifyContent="right" p={2} flexWrap="wrap" position="relative">
               {tokenData && (
