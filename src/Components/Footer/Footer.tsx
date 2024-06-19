@@ -4,13 +4,13 @@ import { useWeb3Modal } from '@web3modal/ethers5/react';
 import { ethers } from 'ethers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter as faXTwitter, faTelegram } from '@fortawesome/free-brands-svg-icons';
-import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faGlobe, faChartLine } from '@fortawesome/free-solid-svg-icons';
 
 const Footer: React.FC = () => {
   const { open } = useWeb3Modal();
   const [provider, setProvider] = useState<ethers.providers.Web3Provider | null>(null);
   const [account, setAccount] = useState<string | null>(null);
-  const [tokenPrice, setTokenPrice] = useState<string | null>(null);
+  const [tokenData, setTokenData] = useState<any>(null);
   const currentYear = new Date().getFullYear();
 
   useEffect(() => {
@@ -31,7 +31,6 @@ const Footer: React.FC = () => {
 
     checkConnection();
   }, []);
-  const [tokenData, setTokenData] = useState<any>(null);
 
   useEffect(() => {
     const fetchTokenData = async () => {
@@ -48,29 +47,65 @@ const Footer: React.FC = () => {
     fetchTokenData();
   }, []);
 
-
   return (
     <footer style={{ backgroundColor: '#68268e', color: 'white', textAlign: 'center', padding: '2px 0', fontFamily: 'Comic Sans MS, Comic Sans, cursive' }}>
       <Box py={4}>
+        <Text fontSize="3xl" mb={2}>&copy; {currentYear} Harold and the Purple Crayon.</Text>
 
-        <Text mb={2}>&copy; {currentYear} Harold and the Purple Crayon.</Text>
-
-                                                                <Flex mb="5px"  mt="5px" justifyContent="center" flexWrap="wrap">
-                                                                    <w3m-network-button />
-                                                                </Flex>
-        <Flex justify="center" align="center" gap={4}>
-          <Link href="https://www.degenpurps.xyz/" isExternal>
-            <FontAwesomeIcon icon={faGlobe} size="sm" />
-          </Link>
-          <Link href="https://twitter.com/DegenPurp" isExternal>
-            <FontAwesomeIcon icon={faXTwitter} size="sm" />
-          </Link>
-          <Link href="https://t.me/purpdegen" isExternal>
-            <FontAwesomeIcon icon={faTelegram} size="sm" />
+        <Flex justify="center" mt={2}>
+          <Link href="https://bridge.degen.tips" isExternal>
+            <Text color="white" fontSize="md">Bridge to Degen Chain? Click Here!</Text>
           </Link>
         </Flex>
-        <Image src="images/footer.png" alt="header" width="220px"  mt="5px" mx="auto" />
 
+
+        <Flex mt="15px" justify="center" align="center" gap={4}>
+          <Link href="https://www.degenpurps.xyz/" isExternal>
+            <FontAwesomeIcon icon={faGlobe} size="lg" />
+          </Link>
+          <Link href="https://twitter.com/DegenPurp" isExternal>
+            <FontAwesomeIcon icon={faXTwitter} size="lg" />
+          </Link>
+          <Link href="https://t.me/purpdegen" isExternal>
+            <FontAwesomeIcon icon={faTelegram} size="lg" />
+          </Link>
+          <Link href="https://dexscreener.com/degenchain/0x401cd27b11e64527cc09bcad1febcf8fcae8e945" isExternal>
+            <FontAwesomeIcon icon={faChartLine} size="lg" />
+          </Link>
+        </Flex>
+  <Text mt="25px" fontSize="sm" mb={2}>Currently Connected to</Text>
+                <Flex mb="5px"  justifyContent="center" flexWrap="wrap">
+
+
+                  <w3m-network-button />
+                </Flex>
+
+        <Flex justify="center" mt={2}>
+          <Link href="https://www.google.com" isExternal>
+            <Image src="images/footer.png" alt="header" width="220px" mb="25px" mt="5px" />
+          </Link>
+        </Flex>
+        <a href="https://alpha7.live" target="_blank" rel="noopener noreferrer">
+          <Image
+            src="https://raw.githubusercontent.com/ArielRin/Alpha7-Public-Files-and-Assets/master/OldDapp/src/headerlogo.png"
+            alt="Logo"
+            width="40px"
+            mx="auto"
+          />
+
+
+        <Flex justifyContent="center" flexWrap="wrap">
+          <Text width="60%" textAlign="center"  fontSize="8px" fontWeight="normal">
+            This Site was Made with Passion, Great Ethics
+          </Text>
+        </Flex>
+        <Flex justifyContent="center" flexWrap="wrap">
+          <Text width="60%" textAlign="center" mb="160px" fontSize="8px" fontWeight="normal">
+            and High Spirits by The Alpha7 Team.
+          </Text>
+        </Flex>
+
+      </a>
       </Box>
     </footer>
   );
