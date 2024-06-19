@@ -41,7 +41,7 @@ const ethersConfig = defaultConfig({
   metadata: {
     name: 'Harold and the Purple Crayon ',
     description: '',
-    url: '',
+    url: 'https://haroldandthepurplecrayon.netlify.app/',
     icons: ['images/favicon.png']
   },
   coinbasePreference: 'smartWalletOnly',
