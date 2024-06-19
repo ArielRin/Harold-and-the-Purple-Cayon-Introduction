@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
 
         <Text mb={2}>&copy; {currentYear} Harold and the Purple Crayon.</Text>
 
-                                                                <Flex mt="5px"  mt="5px" justifyContent="center" flexWrap="wrap">
+                                                                <Flex mb="5px"  mt="5px" justifyContent="center" flexWrap="wrap">
                                                                     <w3m-network-button />
                                                                 </Flex>
         <Flex justify="center" align="center" gap={4}>
