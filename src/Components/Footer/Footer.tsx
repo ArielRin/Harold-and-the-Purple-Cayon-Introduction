@@ -52,7 +52,12 @@ const Footer: React.FC = () => {
   return (
     <footer style={{ backgroundColor: '#800080', color: 'white', textAlign: 'center', padding: '2px 0', fontFamily: 'Comic Sans MS, Comic Sans, cursive' }}>
       <Box py={4}>
+
         <Text mb={2}>&copy; {currentYear} Harold and the Purple Crayon.</Text>
+
+                                                                <Flex mt="5px"  mt="5px" justifyContent="center" flexWrap="wrap">
+                                                                    <w3m-network-button />
+                                                                </Flex>
         <Flex justify="center" align="center" gap={4}>
           <Link href="https://www.degenpurps.xyz/" isExternal>
             <FontAwesomeIcon icon={faGlobe} size="sm" />

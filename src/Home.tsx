@@ -71,7 +71,7 @@ const HomePage = () => {
             bgRepeat="no-repeat"
             bgSize="cover"
             color="white"
-            mb="300px"
+            mb="500px"
           >
             <Flex justifyContent="right" p={2} flexWrap="wrap" position="relative">
               {tokenData && (
