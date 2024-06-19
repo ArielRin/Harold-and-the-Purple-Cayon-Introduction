@@ -34,9 +34,14 @@ const HomePage = () => {
     animation: ${glow} 1.5s ease-in-out infinite alternate;
   `;
 
+  const formatPrice = (price: string) => parseFloat(price).toFixed(8);
+  const usdPrice = (price: string) => {
+    return parseFloat(price).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  };
+
   return (
     <>
-      <Flex bg="rgba(108, 47, 146, 1)" justifyContent="right" flexWrap="wrap">
+      <Flex p="5px" bg="rgba(108, 47, 146, 1)" justifyContent="right" flexWrap="wrap">
         <w3m-button />
       </Flex>
       <Box
@@ -64,7 +69,6 @@ const HomePage = () => {
           bgSize="cover"
           color="white"
         >
-
           <Flex justifyContent="right" p={2} flexWrap="wrap" position="relative">
             <Image src="images/headinglogo.png" alt="header" width="50%" minW="380px" mt="98px" />
           </Flex>
@@ -84,19 +88,14 @@ const HomePage = () => {
             <Flex justifyContent="right" p={2} flexWrap="wrap" position="relative">
               {tokenData && (
                 <Box fontSize="3xl" color="purple" fontFamily="Comic Sans MS, Comic Sans, cursive">
-                {tokenData && (
-                  <Box fontSize="3xl" color="purple" fontFamily="Comic Sans MS, Comic Sans, cursive">
-                    <Text>$PURP: {tokenData.base_token_price_usd}</Text>
-                  </Box>
-                )}
-                  <Text textAlign="right">Market Cap: ${tokenData.fdv_usd}.00</Text>
-                  <Text textAlign="right">Liquidity: ${tokenData.reserve_in_usd}</Text>
+                  <Text textAlign="right">$PURP: {formatPrice(tokenData.base_token_price_usd)}</Text>
+                  <Text textAlign="right">Market Cap: ${usdPrice(tokenData.fdv_usd)}</Text>
+                  <Text textAlign="right">Liquidity: ${usdPrice(tokenData.reserve_in_usd)}</Text>
                 </Box>
               )}
-
             </Flex>
-            <Flex p={6} justifyContent="right" >
-              <Link href="https://yourbuylink.com" isExternal>
+            <Flex p={6} justifyContent="right">
+              <Link href="https://dex.swapdegen.tips/#/swap?outputCurrency=0x4306030564ef40d6302dAA9B1Ace580Fe2dfd6c6" isExternal>
                 <Button
                   size="lg"
                   colorScheme="purple"
@@ -110,7 +109,6 @@ const HomePage = () => {
               </Link>
             </Flex>
           </Box>
-
         </Box>
       </Box>
       <Footer />
