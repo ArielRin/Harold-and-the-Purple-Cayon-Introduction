@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Flex, Box, Text, Link } from '@chakra-ui/react';
+import { Flex, Box, Image, Text, Link } from '@chakra-ui/react';
 import { useWeb3Modal } from '@web3modal/ethers5/react';
 import { ethers } from 'ethers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
 
 
   return (
-    <footer style={{ backgroundColor: '#800080', color: 'white', textAlign: 'center', padding: '2px 0', fontFamily: 'Comic Sans MS, Comic Sans, cursive' }}>
+    <footer style={{ backgroundColor: '#68268e', color: 'white', textAlign: 'center', padding: '2px 0', fontFamily: 'Comic Sans MS, Comic Sans, cursive' }}>
       <Box py={4}>
 
         <Text mb={2}>&copy; {currentYear} Harold and the Purple Crayon.</Text>
@@ -69,11 +69,8 @@ const Footer: React.FC = () => {
             <FontAwesomeIcon icon={faTelegram} size="sm" />
           </Link>
         </Flex>
-        {tokenPrice && (
-          <Text color="purple" mt={2}>
-            PURP Token Price: {tokenPrice}
-          </Text>
-        )}
+        <Image src="images/footer.png" alt="header" width="220px"  mt="5px" mx="auto" />
+
       </Box>
     </footer>
   );

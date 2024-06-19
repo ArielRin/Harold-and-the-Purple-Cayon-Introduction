@@ -58,7 +58,7 @@ createWeb3Modal({
   enableAnalytics: true,
   themeMode: 'dark',
   themeVariables: {
-    '--w3m-color-mix-strength': 100,
+    '--w3m-color-mix-strength': 40,
     // '--w3m-font-family': 'Comic Sans',
     '--w3m-accent': '#8746b5',
     '--w3m-color-mix': '#377ca9'
