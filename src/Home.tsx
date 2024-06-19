@@ -39,6 +39,10 @@ const HomePage = () => {
     return parseFloat(price).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   };
 
+  const textShadowStyle = css`
+    text-shadow: 1px 1px 2px white, 0 0 1em white, 0 0 0.2em white;
+  `;
+
   return (
     <>
       <Flex p="5px" bg="rgba(108, 47, 146, 1)" justifyContent="right" flexWrap="wrap">
@@ -51,7 +55,6 @@ const HomePage = () => {
         m={0}
         display="flex"
         flexDirection="column"
-        bg="rgba(0, 0, 0, 1)"
         color="white"
       >
         <video
@@ -68,23 +71,22 @@ const HomePage = () => {
             zIndex: -1
           }}
         >
-          <source src="images/bkg2.mp4" type="video/mp4" />
+          <source src="/images/bkg2.mp4" type="video/mp4" />
         </video>
-          <Box
-            flex={1}
-            p={0}
-            m={0}
-            display="flex"
-            flexDirection="column"
-            bgImage="url('/images/1bkgclear.png')"
-            bgPosition="center"
-            bgRepeat="no-repeat"
-            bgSize="cover"
-            color="white"
-
+        <Box
+          flex={1}
+          p={0}
+          m={0}
+          display="flex"
+          flexDirection="column"
+          bgImage="url('/images/1bkgclear.png')"
+          bgPosition="center"
+          bgRepeat="no-repeat"
+          bgSize="cover"
+          color="white"
         >
           <Flex justifyContent="right" p={2} flexWrap="wrap" position="relative">
-            <Image src="images/headinglogo.png" alt="header" width="50%" minW="380px" mt="98px" />
+            <Image src="images/headinglogo.png" alt="header" width="50%" minW="380px" mt="28px" />
           </Flex>
           <Box
             flex={1}
@@ -93,14 +95,14 @@ const HomePage = () => {
             display="flex"
             flexDirection="column"
             color="white"
-            mb="600px"
+            mb="2px"
           >
-            <Flex justifyContent="right" p={2} flexWrap="wrap" position="relative">
+            <Flex mt="250px" justifyContent="right" p={2} flexWrap="wrap" position="relative">
               {tokenData && (
-                <Box fontSize="3xl" color="purple" fontFamily="Comic Sans MS, Comic Sans, cursive">
-                  <Text textAlign="right">$PURP: {formatPrice(tokenData.base_token_price_usd)}</Text>
-                  <Text textAlign="right">Market Cap: ${usdPrice(tokenData.fdv_usd)}</Text>
-                  <Text textAlign="right">Liquidity: ${usdPrice(tokenData.reserve_in_usd)}</Text>
+                <Box fontSize="4xl" color="purple" fontFamily="Comic Sans MS, Comic Sans, cursive" css={textShadowStyle}>
+                  <Text  fontWeight="bolder"  textAlign="right">$PURP: {formatPrice(tokenData.base_token_price_usd)}</Text>
+                  <Text  fontWeight="bolder"  textAlign="right">Market Cap: ${usdPrice(tokenData.fdv_usd)}</Text>
+                  <Text fontWeight="bolder" textAlign="right">Liquidity: ${usdPrice(tokenData.reserve_in_usd)}</Text>
                 </Box>
               )}
             </Flex>
