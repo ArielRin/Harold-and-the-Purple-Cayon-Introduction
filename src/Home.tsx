@@ -45,9 +45,6 @@ const HomePage = () => {
 
   return (
     <>
-      <Flex p="5px" bg="rgba(108, 47, 146, 1)" justifyContent="right" flexWrap="wrap">
-        <w3m-button />
-      </Flex>
       <Box
         position="relative"
         flex={1}
@@ -73,6 +70,10 @@ const HomePage = () => {
         >
           <source src="/images/bkg2.mp4" type="video/mp4" />
         </video>
+
+          <Flex p="5px" bg="rgba(0, 0, 0, 0.61)" justifyContent="right" flexWrap="wrap">
+            <w3m-button />
+          </Flex>
         <Box
           flex={1}
           p={0}
