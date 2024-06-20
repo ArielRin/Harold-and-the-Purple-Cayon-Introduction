@@ -61,7 +61,7 @@ import referralAbi from './referralSwapperAbi.json';
 
 const REFERRER_WALLET_ADDRESS = "0xA004979423149b043f1acB63f7852C9D3343c40a";
 
-const tokenLogoUrl = 'https://raw.githubusercontent.com/ArielRin/Alpha7-Public-Files-and-Assets/master/OldDapp/src/Pages/Alpha7token.png';
+const tokenLogoUrl = 'https://raw.githubusercontent.com/ArielRin/Harold-and-the-Purple-Cayon-Introduction/master/public/images/PURP.png?token=GHSAT0AAAAAACTIS45UOJT4CTQNQRO7PIKAZTUDIUQ';
 const bnbLogoUrl = 'https://assets.coingecko.com/coins/images/825/standard/bnb-icon2_2x.png?1696501970';
 
 const contractOptions = {
@@ -333,9 +333,9 @@ const FastSwapComponent = () => {
 
       <div style={{ width: '380px', backgroundColor: 'rgba(84, 104, 152, 1)', borderRadius: '24px', padding: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <div style={{ display: 'flex', alignItems: 'center', width: '100%', marginBottom: '1px', color: 'white' }}>
-          <img src="https://dd.dexscreener.com/ds-data/tokens/base/0x4ed4e862860bed51a9570b96d89af5e1b0efefed.png?size=lg&key=e17c44" alt="DEGEN Logo" style={{ width: logoSize, height: logoSize }} />
-          <span style={{ marginLeft: '10px' }}>DEGEN</span>
-          <div style={{ marginLeft: 'auto' }}>
+          <img src="https://dd.dexscreener.com/ds-data/tokens/base/0x4ed4e862860bed51a9570b96d89af5e1b0efefed.png?size=lg&key=e17c44" alt="DEGEN Logo" style={{ width: "50px", height: "50px" }} />
+          <Text fontSize="xl" style={{ fontFamily: 'Comic Sans MS, Comic Sans, cursive', fontWeight: 'bold' ,  marginLeft: '10px' }}>DEGEN</Text>
+          <div style={{ fontFamily: 'Comic Sans MS, Comic Sans, cursive', fontWeight: 'bold' , marginLeft: 'auto' }}>
             <span>Balance: {bnbBalance}</span>
           </div>
         </div>
@@ -344,16 +344,16 @@ const FastSwapComponent = () => {
           value={amountToSend}
           onChange={(e) => setAmountToSend(e.target.value)}
           placeholder="Enter amount to send (DEGEN)"
-          style={{ width: '100%', margin: '5px 0', padding: '10px', color: 'black', backgroundColor: '#f0f0f0', border: '1px solid #ccc', borderRadius: '4px' }}
+          style={{  textAlign: 'right',   fontFamily: 'Comic Sans MS, Comic Sans, cursive', fontWeight: 'bold' ,  width: '100%', margin: '5px 0', padding: '10px', color: 'purple', backgroundColor: 'rgba(151, 178, 234, 1.0)', border: '1px solid purple', borderRadius: '4px' }}
         />
-        <small style={{ alignSelf: 'flex-start', color: '#fff', marginBottom: '20px' }}>
+        <small style={{ fontFamily: 'Comic Sans MS, Comic Sans, cursive', fontWeight: 'bold' , alignSelf: 'flex-end', color: '#fff', marginBottom: '20px' }}>
           DEGEN value USD: ${isNaN(parseFloat(amountToSend) * (bnbPrice ?? 0)) ? "0.00" : (parseFloat(amountToSend) * (bnbPrice ?? 0)).toFixed(2)}
         </small>
         <div style={{ width: '380px', backgroundColor: 'rgba(61, 79, 108, 0.0)', borderRadius: '24px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.0)', padding: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <div style={{ display: 'flex', alignItems: 'center', width: '100%', marginBottom: '1px', color: 'white' }}>
-            <img src="images/PURP.png" alt="PURP Logo" style={{ width: logoSize, height: logoSize }} />
-            <span style={{ marginLeft: '10px' }}>PURP</span>
-            <div style={{ marginLeft: 'auto' }}>
+            <img src="images/PURP.png" alt="PURP Logo" style={{ width: "50px", height: "50px" }} />
+            <Text fontSize="xl" style={{ fontFamily: 'Comic Sans MS, Comic Sans, cursive', fontWeight: 'bold' , marginLeft: '10px' }}>PURP</Text>
+            <div style={{ fontFamily: 'Comic Sans MS, Comic Sans, cursive', fontWeight: 'bold' , marginLeft: 'auto' }}>
               <span>Balance: {alpha7TokenBalance}</span>
             </div>
           </div>
@@ -361,25 +361,29 @@ const FastSwapComponent = () => {
             readOnly
             value={calculateTokensReceived().toFixed(2) + ' '}
             placeholder="Enter amount to send (DEGEN)"
-            style={{ width: '100%', margin: '5px 0', padding: '10px', color: 'black', backgroundColor: '#f0f0f0', border: '1px solid #ccc', borderRadius: '4px' }}
+            style={{ textAlign: 'right',  fontFamily: 'Comic Sans MS, Comic Sans, cursive', fontWeight: 'bold' , width: '100%', margin: '5px 0', padding: '10px', color: 'purple', backgroundColor: 'rgba(151, 178, 234, 1.0)', border: '3px solid purple', borderRadius: '4px' }}
           />
-          <small style={{ alignSelf: 'flex-start', color: '#fff', marginBottom: '0px' }}>
-            Token value USD: ${isNaN(calculateTokensReceived() * parseFloat(tokenPriceUSD)) ? "0.00" : (calculateTokensReceived() * parseFloat(tokenPriceUSD)).toFixed(2)}
+          <small style={{fontFamily: 'Comic Sans MS, Comic Sans, cursive', fontWeight: 'bold' , alignSelf: 'flex-end', color: '#fff', marginBottom: '0px' }}>
+            PURP Token value USD: ${isNaN(calculateTokensReceived() * parseFloat(tokenPriceUSD)) ? "0.00" : (calculateTokensReceived() * parseFloat(tokenPriceUSD)).toFixed(2)}
           </small>
         </div>
-        <button onClick={sendEther} style={{ width: '100%', padding: '10px 20px', marginTop: '0px', backgroundColor: 'purple', color: 'white', border: 'none', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-    <img src="favicon.png" alt="DegenSwap Logo" style={{ width: logoSize, height: logoSize, marginRight: '10px' }} />
-    <span style={{ fontFamily: 'Comic Sans MS, Comic Sans, cursive', fontWeight: 'bold' }}>Get Some $PURP!</span>
+        <button onClick={sendEther} style={{ width: '100%', padding: '10px 20px', marginTop: '0px', backgroundColor: 'purple', color: 'white', border: 'none', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
+    <img src="favicon.png" alt="DegenSwap Logo" style={{ width: '47px', height:'47px', marginRight: '20px' }} />
+    <span style={{ fontFamily: 'Comic Sans MS, Comic Sans, cursive', fontWeight: 'bold' }}>Get Some $PURP Now!</span>
   </button>
+  <a href="https://dex.swapdegen.tips/?outputCurrency=0x4306030564ef40d6302daa9b1ace580fe2dfd6c6#/swap" target="_blank" rel="noopener noreferrer" style={{ width: '100%', padding: '5px 25px', marginTop: '0px', color: 'white', border: 'none', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', textDecoration: 'none' }}>
+    <img src="images/degenswap.png" alt="Wallet Icon" style={{ width: "18px", height: "27px", marginRight: '8px' }} />
+    <span style={{ fontFamily: 'Comic Sans MS, Comic Sans, cursive', fontWeight: 'bold' }}>or Buy PURP at Degen Swap</span>
+  </a>
+  <a onClick={addTokenToWallet} style={{ width: '100%',  color: 'white', border: 'none', borderRadius: '12px', display: 'flex', alignItems: 'center', padding: '5px 25px', justifyContent: 'flex-start', textDecoration: 'none' }}>
+    <img src="images/PURP.png" alt="PURP Logo" style={{ width: "22px", height: "22px", marginRight: '8px' }} />
+    <span style={{ fontFamily: 'Comic Sans MS, Comic Sans, cursive', fontWeight: 'bold' }}>Add $PURP Token to Wallet</span>
+  </a>
+  <a href="https://explorer.degen.tips/address/0x4306030564ef40d6302dAA9B1Ace580Fe2dfd6c6" target="_blank" rel="noopener noreferrer" style={{ width: '100%', padding: '5px 25px', marginTop: '0px', color: 'white', border: 'none', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', textDecoration: 'none' }}>
+    <img src="images/explorer.svg" alt="Wallet Icon" style={{ width: "80px", height: "28px", marginRight: '8px' }} />
+    <span style={{ fontFamily: 'Comic Sans MS, Comic Sans, cursive', fontWeight: 'bold' }}>Explorer</span>
+  </a>
 
-            <a href="https://dex.swapdegen.tips/?outputCurrency=0x4306030564ef40d6302daa9b1ace580fe2dfd6c6#/swap" target="_blank" rel="noopener noreferrer" style={{ width: '100%', padding: '10px 20px', marginTop: '0px',  color: 'white', border: 'none', borderRadius: '12px', display: 'flex', alignItems: 'left', justifyContent: 'center', textDecoration: 'none' }}>
-            <img src="https://dex.swapdegen.tips/images/favicon.png" alt="Wallet Icon" style={{ width: "27px", height: "27px", marginRight: '8px' }} />
-            <span style={{ fontFamily: 'Comic Sans MS, Comic Sans, cursive', fontWeight: 'bold' }}>or Buy PURP at Degen Swap</span>
-          </a>
-          <a onClick={addTokenToWallet} style={{ width: '100%', padding: '10px 20px', marginTop: '0px',  color: 'white', border: 'none', borderRadius: '12px', display: 'flex', alignItems: 'left', justifyContent: 'center', textDecoration: 'none' }}>
-          <img src={walletIcon} alt="DegenSwap Logo" style={{ align: 'left', width: "27px", height: "27px", marginRight: '10px' }} />
-          <span style={{ fontFamily: 'Comic Sans MS, Comic Sans, cursive', fontWeight: 'bold' }}>Add $PURP to Wallet</span>
-        </a>
       </div>
     </div>
       <Flex p="5px" bg="rgba(0, 0, 0, 0)" justifyContent="left" flexWrap="wrap">
