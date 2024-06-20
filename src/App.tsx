@@ -5,6 +5,8 @@ import { Box, Button } from '@chakra-ui/react';
 import { ethers } from 'ethers';
 
 import Home from './Home';
+import Mini from './Components/MiniSwapper/MiniSwapper';
+
 
 
 import {
@@ -114,6 +116,7 @@ const App = () => {
 
       <Routes>
           <Route path="/" element={<Home />} />
+              <Route path="/swap" element={<Mini />} />
       </Routes>
     </Router>
   );

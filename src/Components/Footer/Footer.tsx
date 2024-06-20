@@ -48,11 +48,14 @@ const Footer: React.FC = () => {
   }, []);
 
   return (
-    <footer style={{ backgroundColor: '#68268e', color: 'white', textAlign: 'center', padding: '2px 0', fontFamily: 'Comic Sans MS, Comic Sans, cursive' }}>
-      <Box py={4}>
+    <footer style={{ backgroundColor: '#68268e', color: 'white', textAlign: 'center',  fontFamily: 'Comic Sans MS, Comic Sans, cursive' }}>
+      <Box >
+
+      <Image src="images/friends.png" mx="auto" alt="header" minW="390px" width="620px"  />
+
         <Text fontSize="3xl" mb={2}>&copy; {currentYear} Harold and the Purple Crayon.</Text>
 
-        <Flex justify="center" mt={2}>
+        <Flex justify="center" mt="2px">
           <Link href="https://bridge.degen.tips" isExternal>
             <Text color="white" fontSize="md">Bridge to Degen Chain? Click Here!</Text>
           </Link>
@@ -82,7 +85,7 @@ const Footer: React.FC = () => {
 
         <Flex justify="center" mt={2}>
           <Link href="https://www.google.com" isExternal>
-            <Image src="images/footer.png" alt="header" width="220px" mb="25px" mt="5px" />
+            <Image src="images/footer.png" alt="header"  minW="390px" width="620px" mb="25px" mt="5px" />
           </Link>
         </Flex>
         <a href="https://alpha7.live" target="_blank" rel="noopener noreferrer">
