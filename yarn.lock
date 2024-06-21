@@ -3085,7 +3085,7 @@
 
 "@web3modal/ethers5@^5.0.2":
   version "5.0.3"
-  resolved "https://registry.yarnpkg.com/@web3modal/ethers5/-/ethers5-5.0.3.tgz#a7686c9692f74744a6b2dc8f9500f3701c1e9c6b"
+  resolved "https://registry.yarnpkg.com/@web3modal/-/ethers5-5.0.3.tgz#a7686c9692f74744a6b2dc8f9500f3701c1e9c6b"
   integrity sha512-P11S0xRKPRNnr/TW1pJ8O0qoumnujwYH4pHlRBXa8eq7xv0IvHT5hcCvfA+05smp3CvdMOx4uhtP9Eyfd9QfBg==
   dependencies:
     "@coinbase/wallet-sdk" "4.0.3"

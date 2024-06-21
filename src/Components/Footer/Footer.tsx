@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Flex, Box, Image, Text, Link } from '@chakra-ui/react';
-import { useWeb3Modal } from '@web3modal/ethers5/react';
+import { useWeb3Modal } from '@web3modal/ethers/react';
 import { ethers } from 'ethers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter as faXTwitter, faTelegram } from '@fortawesome/free-brands-svg-icons';
