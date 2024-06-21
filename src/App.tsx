@@ -73,7 +73,7 @@ const ethersConfig = defaultConfig({
   defaultChainId: 666666666,
   rpcUrl: 'https://rpc-degen-mainnet-1.t.conduit.xyz',
   auth: {
-    email: false,
+    email: true,
     socials: ['google', 'x', 'apple'],
     showWallets: true,
     walletFeatures: true
