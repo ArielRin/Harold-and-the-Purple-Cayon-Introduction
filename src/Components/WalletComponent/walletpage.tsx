@@ -117,8 +117,18 @@ const RegisterNFT: React.FC = () => {
       const response = await fetch('/tokensUserList.json');
       const tokens = await response.json();
       console.log("Fetched token list:", tokens);
-      setTokens(tokens);
-      fetchTokenBalances(tokens);
+
+      // Add the native token to the list
+      const nativeToken = {
+        symbol: 'DEGEN',
+        address: 'native',
+        name: 'Degen Chain',
+        icon: 'https://dd.dexscreener.com/ds-data/tokens/base/0x4ed4e862860bed51a9570b96d89af5e1b0efefed.png?size=lg&key=e17c44',
+        decimals: 18
+      };
+
+      setTokens([nativeToken, ...tokens]);
+      fetchTokenBalances([nativeToken, ...tokens]);
     } catch (error) {
       console.error('Error fetching token list:', error);
       toast({
@@ -166,6 +176,8 @@ const RegisterNFT: React.FC = () => {
       }
 
       for (const token of tokens) {
+        if (token.symbol === 'DEGEN') continue; // Skip fetching balance for native token again
+
         const tokenContract = new ethers.Contract(token.address, [
           "function balanceOf(address owner) view returns (uint256)",
           "function decimals() view returns (uint8)"
@@ -380,8 +392,8 @@ const RegisterNFT: React.FC = () => {
                               </Button>
                             </Flex>
                             <Flex mt="4" ml="5" align="left">
-                              <Link href={`https://bscscan.com/token/${balances[symbol]?.address}`} isExternal>
-                                BscScan <ExternalLinkIcon mx="2px" />
+                              <Link href={`https://explorer.degen.tips/token/${balances[symbol]?.address}`} isExternal>
+                                Degen Explorer <ExternalLinkIcon mx="2px" />
                               </Link>
                             </Flex>
                             {token.website && (
