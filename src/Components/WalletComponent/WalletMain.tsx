@@ -287,7 +287,7 @@ const HomePage: React.FC = () => {
             mx="auto"
           />
         </Flex>
-      
+
         <Box
           marginBottom="40px"
           borderRadius="2xl"
@@ -301,9 +301,15 @@ const HomePage: React.FC = () => {
           <Wallet />
         </Box>
         <Center>
-          <VStack  mb="200px" bg="rgba(0, 0, 0, 0.6)" p="4" color="white" borderRadius="xl" spacing={4} align="center" maxWidth="900px" width="100%">
-            {/* Additional content goes here */}
-          </VStack>
+
+          <Image
+            src="/images/cup.png"
+            alt="Harolds Wallet"
+            width="35%"
+            minW="340px"
+            mx="auto"
+          />
+
         </Center>
       </Box>
     </Box>
