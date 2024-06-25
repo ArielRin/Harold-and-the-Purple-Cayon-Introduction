@@ -308,6 +308,8 @@ const HomePage: React.FC = () => {
             width="35%"
             minW="340px"
             mx="auto"
+            mt="100px"
+            mb="200px"
           />
 
         </Center>
