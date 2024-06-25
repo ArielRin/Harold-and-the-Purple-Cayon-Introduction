@@ -377,7 +377,7 @@ const RegisterNFT: React.FC = () => {
                               </Flex>
                             )}
                             <Flex mt="9" align="left">
-                              <Text ml="5" fontSize="sm" textAlign="left">{balances[symbol]?.address}</Text>
+                              <Text ml="5" fontSize="sm" textAlign="left">{token.address}</Text>
                             </Flex>
                             <Flex ml="5" mt="2" align="left">
                               <IconButton
@@ -385,14 +385,14 @@ const RegisterNFT: React.FC = () => {
                                 colorScheme="purple"
                                 aria-label="Copy Contract Address"
                                 size="sm"
-                                onClick={() => handleCopy(balances[symbol]?.address)}
+                                onClick={() => handleCopy(token.address)}
                               />
                               <Button ml="1" colorScheme="purple" size="sm" onClick={() => addToWallet(token)}>
                                 Add to Wallet
                               </Button>
                             </Flex>
                             <Flex mt="4" ml="5" align="left">
-                              <Link href={`https://explorer.degen.tips/token/${balances[symbol]?.address}`} isExternal>
+                              <Link href={`https://explorer.degen.tips/token/${token.address}`} isExternal>
                                 Degen Explorer <ExternalLinkIcon mx="2px" />
                               </Link>
                             </Flex>
