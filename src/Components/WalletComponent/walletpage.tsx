@@ -159,7 +159,7 @@ const RegisterNFT: React.FC = () => {
         const usdValue = formattedBalance * parseFloat(wdegenPrice);
         balances['DEGEN'] = {
           balance: formattedBalance > 10 ? formattedBalance.toFixed(0) : formattedBalance.toFixed(4),
-          usdValue: usdValue.toFixed(2),
+          usdValue: usdValue.toFixed(5),
           price: wdegenPrice,
           address: "native"
         };
@@ -301,12 +301,12 @@ const RegisterNFT: React.FC = () => {
               Track the Balance of your Degen Chain Tokens Use $PURP Balance Tracker on any connected address!
               </Text>
             </Box>
-            <Text fontSize="md" mt="4" textAlign="right" fontWeight="bold">Your Listed Tokens USD Value</Text>
-            <Text fontSize="5xl" textAlign="right" fontWeight="bold" mt="2"> ${totalUSDValue.toFixed(2)} USD</Text>
-            <Text mt="9" fontSize="sm" color="white" fontWeight="semibold" textAlign="left">
+            <Text fontSize="md" mt="1" textAlign="right" fontWeight="bold">Your Listed Tokens USD Value</Text>
+            <Text fontSize="5xl" textAlign="right" fontWeight="bold" > ${totalUSDValue.toFixed(3)} USD</Text>
+            <Text  fontSize="sm" color="white" fontWeight="semibold" textAlign="left">
               Click the tokens to view more details
             </Text>
-            <FormControl display="flex" alignItems="center" mt="4">
+            <FormControl display="flex" alignItems="center" >
               <FormLabel htmlFor="show-balances" mb="0">
                 Show only your balances
               </FormLabel>
