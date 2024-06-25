@@ -4,6 +4,8 @@ import './styles.css';
 
 import Home from './Home';
 
+import Wallet from './Components/WalletComponent/WalletMain';    
+
 import { ethers, BrowserProvider } from 'ethers';
 import {
   createWeb3Modal,
@@ -149,6 +151,7 @@ const modal = createWeb3Modal({
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+          <Route path="/wallet" element={<Wallet />} />
       </Routes>
     </Router>
   );
