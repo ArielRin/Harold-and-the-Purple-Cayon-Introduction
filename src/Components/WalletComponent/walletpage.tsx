@@ -307,10 +307,10 @@ const RegisterNFT: React.FC = () => {
               Click the tokens to view more details
             </Text>
             <FormControl display="flex" alignItems="center" >
-              <FormLabel htmlFor="show-balances" mb="0">
+              <FormLabel htmlFor="show-balances" mt="20px" mb="0">
                 Show only your balances
               </FormLabel>
-              <Switch id="show-balances" colorScheme="purple" isChecked={showOnlyBalances} onChange={() => setShowOnlyBalances(!showOnlyBalances)} />
+              <Switch id="show-balances" mt="20px"  colorScheme="purple" isChecked={showOnlyBalances} onChange={() => setShowOnlyBalances(!showOnlyBalances)} />
             </FormControl>
           </>
         )}
